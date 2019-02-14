@@ -48,6 +48,6 @@ git clone https://github.com/z20240/.gitconfig.git ~/.gitconfig_folder;
 ln ~/.gitconfig_folder/.gitconfig ~/.gitconfig;
 
 ## ==== 使用全域搜尋小工具來代替 grep ==== ##
-https://github.com/z20240/simpleGrep.git ~/.grepTool_folder
+git clone https://github.com/z20240/simpleGrep.git ~/.grepTool_folder
 ln ~/.grepTool_folder/grepTool /usr/local/bin/grepTool;
 
