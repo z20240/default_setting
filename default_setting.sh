@@ -51,3 +51,16 @@ ln ~/.gitconfig_folder/.gitconfig ~/.gitconfig;
 git clone https://github.com/z20240/simpleGrep.git ~/.grepTool_folder
 ln ~/.grepTool_folder/grepTool /usr/local/bin/grepTool;
 
+
+
+## ==== Tmux 安裝 ==== ##
+brew install tmux;
+sudo apt-get install tmux;
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;
+
+https://github.com/z20240/.tmux.git ~/.tmux_folder;
+ln ~/.tmux_folder/.tmux.conf ~/.tmux.conf;
+
+# type this in terminal if tmux is already running
+$ tmux source ~/.tmux.conf
