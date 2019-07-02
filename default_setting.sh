@@ -31,7 +31,7 @@ source ~/.zshrc
 # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim;
 # 下載 vimrc
 git clone https://github.com/z20240/.vim.git .vim;
-# ln ~/.vim_folder/.vimrc ~/.vimrc;
+ln ~/.vim/.vimrc ~/.vimrc;
 vim +PluginInstall +qall;
 
 # 下載顏色
