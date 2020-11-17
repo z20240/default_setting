@@ -8,16 +8,12 @@
 # 安裝 zsh
 brew install zsh zsh-completions;
 
-# 安裝自動提示
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
 # 修改shall預設
 sudo sh -c "echo $(which zsh) >> /etc/shells";
 chsh -s $(which zsh);
 
 # 重開
 echo $SHELL;
-
 
 # 安裝 oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
@@ -26,7 +22,27 @@ rm ~/.zshrc;
 # link 2 zshrc
 git clone https://github.com/z20240/.zshrc.git .zsh_folder;
 ln ~/.zsh_folder/.zshrc ~/.zshrc;
+
+
+# 安裝自動提示
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# 安裝可以自動跳轉的工具, 未來使用 `j` 就可以跳至曾經去過的 file path
+brew install autojump
+# -- linux 安裝方法 -- #
+### git clone git://github.com/joelthelion/autojump.git
+### cd autojump
+### ./install.py
+
+# syntax highlight
+git clone git://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
 source ~/.zshrc
+
+# ==== 使用 bat 代替 cat ==== #
+brew install bat
+## linux 安裝方法
+### sudo dpkg -i bat_0.6.0_amd64.deb
 
 ## ===== VIM 部分 ===== ##
 
