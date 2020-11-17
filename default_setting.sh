@@ -8,6 +8,9 @@
 # 安裝 zsh
 brew install zsh zsh-completions;
 
+# 安裝自動提示
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 # 修改shall預設
 sudo sh -c "echo $(which zsh) >> /etc/shells";
 chsh -s $(which zsh);
