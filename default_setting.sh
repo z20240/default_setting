@@ -67,3 +67,19 @@ ln ~/.tmux_folder/.tmux.conf ~/.tmux.conf;
 
 # type this in terminal if tmux is already running
 $ tmux source ~/.tmux.conf
+
+# ==== Options (選配) ==== #
+
+# -- ranger 是一個非常方便的文件導航 cmd. -- #
+# brew install ranger # for osx
+# sudo apt install ranger # for linux.
+
+# -- JSON 視覺化互動工具 -- #
+# npm install -g fx
+
+# -- 使用 SQL 找尋檔案 -- #
+# brew install fselect # for osx
+
+# for linux, 需要先安裝 rustup 再從 rustup 安裝 fselect
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# cargo install fselect
