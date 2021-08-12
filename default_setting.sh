@@ -44,6 +44,11 @@ brew install bat
 ## linux 安裝方法
 ### sudo dpkg -i bat_0.6.0_amd64.deb
 
+# ==== 使用 fzf 代替 find ===== #
+brew install fzf
+## linux 安裝方法
+### sudo apt-get install fzf
+
 ## ===== VIM 部分 ===== ##
 
 # 下載 Vundle
