@@ -75,8 +75,6 @@ ln ~/.gitconfig_folder/.gitconfig ~/.gitconfig;
 git clone https://github.com/z20240/simpleGrep.git ~/.grepTool_folder
 ln ~/.grepTool_folder/grepTool /usr/local/bin/grepTool;
 
-
-
 ## ==== Tmux 安裝 ==== ##
 brew install tmux;
 sudo apt-get install tmux;
@@ -88,6 +86,34 @@ ln ~/.tmux_folder/.tmux.conf ~/.tmux.conf;
 
 # type this in terminal if tmux is already running
 $ tmux source ~/.tmux.conf
+
+# ==== tilling window management ==== #
+
+# --------------------------------------
+# https://github.com/koekeishiya/yabai
+# MacOS window manager
+brew install koekeishiya/formulae/yabai
+# --------------------------------------
+# https://github.com/stedolan/jq
+# Lightweight and flexible command-line JSON processor 
+brew install jq
+# --------------------------------------
+# https://github.com/koekeishiya/skhd
+# Simple hotkey daemon for macOS
+brew install koekeishiya/formulae/skhd
+# --------------------------------------
+# Remove previous links
+rm -f "${HOME}"/.{yabai,skhd}rc
+# clone settings
+git clone https://github.com/z20240/yabai.git "${HOME}"/.config/yabai
+ln -s "${HOME}/.config/yabai/yabai/yabairc" "${HOME}/.yabairc"
+ln -s "${HOME}/.config/yabai/skhd/skhdrc" "${HOME}/.skhdrc"
+# --------------------------------------
+# Will automatically start Yabai when computer starts
+brew services start yabai
+# Will automatically start skhd when computer starts
+brew services start skhd
+# --------------------------------------
 
 # ==== Options (選配) ==== #
 
