@@ -87,7 +87,7 @@ ln ~/.tmux_folder/.tmux.conf ~/.tmux.conf;
 # type this in terminal if tmux is already running
 $ tmux source ~/.tmux.conf
 
-# ==== tilling window management ==== #
+# ==== Tilling window management ==== #
 
 # --------------------------------------
 # https://github.com/koekeishiya/yabai
@@ -114,6 +114,31 @@ brew services start yabai
 # Will automatically start skhd when computer starts
 brew services start skhd
 # --------------------------------------
+# Install hammerspoon (https://github.com/Hammerspoon/hammerspoon)
+brew install hammerspoon --cask 
+# or download *.zip manually from https://github.com/Hammerspoon/hammerspoon/releases/latest
+# start the hammerspoon in dashboard.
+# ---------------------------------------
+# Install stackline (https://github.com/AdamWagner/stackline)
+# Get the repo
+git clone https://github.com/AdamWagner/stackline.git ~/.hammerspoon/stackline
+
+# Make stackline run when hammerspoon launches
+cd ~/.hammerspoon
+
+cp ~/.hammerspoon/stackline/conf.lua ~/.hammerspoon/stakeline_config.lua
+
+# **Hint**: If is M1 - you have to change the code below
+# -- in stackline/conf.lua
+# c.paths.yabai = '/opt/homebrew/bin/yabai' -- silicon mac, M1
+# c.paths.yabai = '/usr/local/bin/yabai'    -- intel version.
+echo 'stackline = require "stackline"' >> init.lua
+echo 'local stackline_config = require "stackline_config"' >> init.lua
+echo 'stackline:init(stackline_config)' >> init.lua
+# ---------------------------------------
+
+
+
 
 # ==== Options (選配) ==== #
 
