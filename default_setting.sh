@@ -1,10 +1,16 @@
 #!/bin/sh
 
-# 安裝 homebrew
+# ====== 安裝 homebrew ====== #
+
+# --------------------------------------
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
+# --------------------------------------
+
+
 
 ## ===== ZSH 部分 ===== ##
 
+# --------------------------------------
 # 安裝 zsh
 brew install zsh zsh-completions;
 
@@ -38,19 +44,33 @@ brew install autojump
 git clone git://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 source ~/.zshrc
+# --------------------------------------
+
+
 
 # ==== 使用 bat 代替 cat ==== #
+
+# --------------------------------------
 brew install bat
 ## linux 安裝方法
 ### sudo dpkg -i bat_0.6.0_amd64.deb
+# --------------------------------------
+
+
 
 # ==== 使用 fzf 代替 find ===== #
+
+# --------------------------------------
 brew install fzf
 ## linux 安裝方法
 ### sudo apt-get install fzf
+# --------------------------------------
+
+
 
 ## ===== VIM 部分 ===== ##
 
+# --------------------------------------
 # 下載 Vundle
 # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim;
 # 下載 vimrc
@@ -64,18 +84,32 @@ vim +PluginInstall +qall;
 # mv ~/molokai/colors/molokai.vim ~/.vim/colors/molokai.vim;
 # rm -rf ~/molokai;
 # source ~/.vimrc
+# --------------------------------------
+
+
 
 ## ===== GITCONFIG 部分 ===== ##
 
+# --------------------------------------
 # 下載 gitconfig
 git clone https://github.com/z20240/.gitconfig.git ~/.gitconfig_folder;
 ln ~/.gitconfig_folder/.gitconfig ~/.gitconfig;
+# --------------------------------------
+
+
 
 ## ==== 使用全域搜尋小工具來代替 grep ==== ##
+
+# --------------------------------------
 git clone https://github.com/z20240/simpleGrep.git ~/.grepTool_folder
 ln ~/.grepTool_folder/grepTool /usr/local/bin/grepTool;
+# --------------------------------------
+
+
 
 ## ==== Tmux 安裝 ==== ##
+
+# --------------------------------------
 brew install tmux;
 sudo apt-get install tmux;
 
@@ -86,6 +120,9 @@ ln ~/.tmux_folder/.tmux.conf ~/.tmux.conf;
 
 # type this in terminal if tmux is already running
 $ tmux source ~/.tmux.conf
+# --------------------------------------
+
+
 
 # ==== Tilling window management ==== #
 
@@ -95,7 +132,7 @@ $ tmux source ~/.tmux.conf
 brew install koekeishiya/formulae/yabai
 # --------------------------------------
 # https://github.com/stedolan/jq
-# Lightweight and flexible command-line JSON processor 
+# Lightweight and flexible command-line JSON processor
 brew install jq
 # --------------------------------------
 # https://github.com/koekeishiya/skhd
@@ -115,7 +152,7 @@ brew services start yabai
 brew services start skhd
 # --------------------------------------
 # Install hammerspoon (https://github.com/Hammerspoon/hammerspoon)
-brew install hammerspoon --cask 
+brew install hammerspoon --cask
 # or download *.zip manually from https://github.com/Hammerspoon/hammerspoon/releases/latest
 # start the hammerspoon in dashboard.
 # ---------------------------------------
@@ -139,9 +176,26 @@ echo 'stackline:init(stackline_config)' >> init.lua
 
 
 
+# ==== 鼠鬚管輸入法 ==== #
+
+# --------------------------------------
+# 下載鼠鬚管
+git clone https://github.com/z20240/squirrel.git ~/squirrel
+
+# 點擊 .pkg 安裝
+
+# 下載 Rime 設定檔
+rm -rf ~/Library/Rime
+git clone https://github.com/z20240/Rime.git ~/Library/Rime
+
+# 將 essay.txt 覆蓋到 input 中，使習慣用語貼近台灣用語
+sudo cp ~/squirrel/essay.txt /Library/Input\ Methods/Squirrel.app/Contents/SharedSupport/essay.txt
+# --------------------------------------
+
+
 
 # ==== Options (選配) ==== #
-
+# --------------------------------------
 # -- ranger 是一個非常方便的文件導航 cmd. -- #
 # brew install ranger # for osx
 # sudo apt install ranger # for linux.
@@ -155,3 +209,4 @@ echo 'stackline:init(stackline_config)' >> init.lua
 # for linux, 需要先安裝 rustup 再從 rustup 安裝 fselect
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # cargo install fselect
+# --------------------------------------
