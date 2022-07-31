@@ -170,8 +170,7 @@ cp ~/.hammerspoon/stackline/conf.lua ~/.hammerspoon/stakeline_config.lua
 # c.paths.yabai = '/opt/homebrew/bin/yabai' -- silicon mac, M1
 # c.paths.yabai = '/usr/local/bin/yabai'    -- intel version.
 echo 'stackline = require "stackline"' >> init.lua
-echo 'local stackline_config = require "stackline_config"' >> init.lua
-echo 'stackline:init(stackline_config)' >> init.lua
+echo 'stackline:init()' >> init.lua
 # ---------------------------------------
 
 
