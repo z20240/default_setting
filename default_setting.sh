@@ -126,18 +126,23 @@ $ tmux source ~/.tmux.conf
 
 # ==== Tilling window management ==== #
 
-# --------------------------------------
+# yabai --------------------------------
 # https://github.com/koekeishiya/yabai
 # MacOS window manager
 brew install koekeishiya/formulae/yabai
-# --------------------------------------
+# If in M1 OSX
+ln -s /opt/homebrew/bin/yabai /usr/local/bin/yabai
+
+# jq -----------------------------------
 # https://github.com/stedolan/jq
 # Lightweight and flexible command-line JSON processor
 brew install jq
-# --------------------------------------
+
+# skhd ---------------------------------
 # https://github.com/koekeishiya/skhd
 # Simple hotkey daemon for macOS
 brew install koekeishiya/formulae/skhd
+
 # --------------------------------------
 # Remove previous links
 rm -f "${HOME}"/.{yabai,skhd}rc
@@ -145,34 +150,41 @@ rm -f "${HOME}"/.{yabai,skhd}rc
 git clone https://github.com/z20240/yabai.git "${HOME}"/.config/yabai
 ln -s "${HOME}/.config/yabai/yabai/yabairc" "${HOME}/.yabairc"
 ln -s "${HOME}/.config/yabai/skhd/skhdrc" "${HOME}/.skhdrc"
+
 # --------------------------------------
 # Will automatically start Yabai when computer starts
 brew services start yabai
 # Will automatically start skhd when computer starts
 brew services start skhd
+
 # --------------------------------------
 # Install hammerspoon (https://github.com/Hammerspoon/hammerspoon)
 brew install hammerspoon --cask
 # or download *.zip manually from https://github.com/Hammerspoon/hammerspoon/releases/latest
 # start the hammerspoon in dashboard.
+
 # ---------------------------------------
 # Install stackline (https://github.com/AdamWagner/stackline)
 # Get the repo
 git clone https://github.com/AdamWagner/stackline.git ~/.hammerspoon/stackline
-
 # Make stackline run when hammerspoon launches
 cd ~/.hammerspoon
-
 cp ~/.hammerspoon/stackline/conf.lua ~/.hammerspoon/stakeline_config.lua
-
 # **Hint**: If is M1 - you have to change the code below
 # -- in stackline/conf.lua
 # c.paths.yabai = '/opt/homebrew/bin/yabai' -- silicon mac, M1
 # c.paths.yabai = '/usr/local/bin/yabai'    -- intel version.
 echo 'stackline = require "stackline"' >> init.lua
 echo 'stackline:init()' >> init.lua
-# ---------------------------------------
 
+# Übersicht -----------------------------
+# Install Übersicht (https://github.com/felixhageloh/uebersicht)
+# (Do it manually) => download the app on website and install: http://tracesof.net/uebersicht/
+
+# simple-bar ----------------------------
+git clone https://github.com/z20240/simple-bar ~/Documents/simple-bar
+cd ~/Documents/simple-bar && cp settings.template.json settings.json
+ln -s ~/Documents/simple-bar $HOME/Library/Application\ Support/Übersicht/widgets/simple-bar
 
 
 # ==== 鼠鬚管輸入法 ==== #
