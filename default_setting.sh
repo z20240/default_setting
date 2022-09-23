@@ -181,11 +181,16 @@ echo 'stackline:init()' >> init.lua
 # Install Übersicht (https://github.com/felixhageloh/uebersicht)
 # (Do it manually) => download the app on website and install: http://tracesof.net/uebersicht/
 
-# simple-bar ----------------------------
-git clone https://github.com/z20240/simple-bar ~/Documents/simple-bar
-cd ~/Documents/simple-bar && cp settings.template.json settings.json
+## create a widgets folder ---------------
+mkdir ~/Documents/ubersicht
+## simple-bar ----------------------------
+git clone https://github.com/z20240/simple-bar ~/Documents/ubersicht/simple-bar
+cd ~/Documents/ubersicht/simple-bar && cp settings.template.json settings.json
 ln -s ~/Documents/simple-bar $HOME/Library/Application\ Support/Übersicht/widgets/simple-bar
-
+## calendar ----------------------------
+git clone https://github.com/z20240/ubersicht-calender ~/Documents/ubersicht/ubersicht-calender
+ln -s ~/Documents/ubersicht-calender $HOME/Library/Application\ Support/Übersicht/widgets/calendar
+ 
 
 # ==== 鼠鬚管輸入法 ==== #
 
