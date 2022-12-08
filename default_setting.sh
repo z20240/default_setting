@@ -128,8 +128,10 @@ $ tmux source ~/.tmux.conf
 
 # yabai --------------------------------
 # https://github.com/koekeishiya/yabai
+# Please follow this instruction. 
+# https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(from-HEAD)
 # MacOS window manager
-brew install koekeishiya/formulae/yabai
+brew install koekeishiya/formulae/yabai --HEAD
 # If in M1 OSX
 ln -s /opt/homebrew/bin/yabai /usr/local/bin/yabai
 
